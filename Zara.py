@@ -63,12 +63,10 @@ def processCommand(c):
                 return
         else:
             speak("Song not found!")
-
     else:
         response = get_gemini_response(command)
         print(f"🤖 Gemini Response: {response}")
         speak(response)
-
     print(c)
 
 if __name__ == "__main__":
@@ -97,3 +95,6 @@ if __name__ == "__main__":
                     
         except Exception as e:
             print("Error; {0}".format(e))
+        except KeyboardInterrupt:
+            print("\n❌ Program stopped manually.")
+            exit()
